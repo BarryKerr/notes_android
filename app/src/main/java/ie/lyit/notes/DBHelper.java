@@ -1,3 +1,6 @@
+package ie.lyit.notes;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -36,7 +39,28 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     *
+     * @param note
+     */
     public void addNote(Note note){
-
+        ContentValues values =  new ContentValues();
+        values.put(COLUMN_HEADER, note.getHeader());
+        values.put(COLUMN_BODY, note.getBody());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_NOTES, null, values);
+        db.close();
     }
+
+    /**
+     *
+     * @param note_id
+     */
+    public void deleteContact(int note_id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NOTES + " WHERE "+ COLUMN_ID + " = " + note_id);
+    }
+
+
 }
