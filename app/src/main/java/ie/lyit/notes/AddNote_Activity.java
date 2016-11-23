@@ -3,7 +3,6 @@ package ie.lyit.notes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -22,7 +21,7 @@ public class AddNote_Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        dbHelper = new DBHelper(AddNote_Activity.this,null,null,1);
+        dbHelper = new DBHelper(AddNote_Activity.this,null,null,3);
         editTextHeader = (EditText) findViewById(R.id.editTextHeading);
         editTextBody = (EditText) findViewById(R.id.editTextBody);
 
