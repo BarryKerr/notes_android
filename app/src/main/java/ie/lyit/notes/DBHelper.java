@@ -12,6 +12,7 @@ import ie.lyit.notes.Note;
 
 /**
  * Created by barry on 16/11/2016.
+ * desc - local db.
  */
 
 public class DBHelper extends SQLiteOpenHelper {
